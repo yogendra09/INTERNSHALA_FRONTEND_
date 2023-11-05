@@ -16,10 +16,10 @@ const page = () => {
       email
     };
     await dispatch(asyncforgetpasswordstudent(em));
-    if (errors.length > 2) {
+    if (errors.length < 10) {
       router.push("/student/forget/otp");
     }else{
-      toast.error(JSON.stringify(errors));
+     
       return;
     }
   };
