@@ -5,6 +5,7 @@ const initialState = {
   jobs: null,
   internships: null,
   errors: [],
+  appliedstudent:[],
   isAuthenticated: false,
 };
 
@@ -28,6 +29,9 @@ export const employeReducer = createSlice({
     iserror: (state, action) => {
       state.errors.push(action.payload);
     },
+    appliedstudent: (state, action) => {
+      state.appliedstudent.push(action.payload);
+    },
     removeerror: (state, action) => {
       state.errors = [];
     },
@@ -42,6 +46,7 @@ export const {
   addjobs,
   iserror,
   removeerror,
+  appliedstudent
 } = employeReducer.actions;
 
 export default employeReducer.reducer;

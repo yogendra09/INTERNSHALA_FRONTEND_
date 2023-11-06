@@ -17,7 +17,6 @@ const page = () => {
   }, [isAuthenticated]);
 
   const SignInHandler = async(e) => {
-    console.log("first",email,password)
     e.preventDefault();
     const Student = {
       email,

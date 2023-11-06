@@ -7,6 +7,7 @@ import {
   iserror,
   removeerror,
   addstudent,
+  
 } from "../Reducers/studentReducer";
 import { toast } from "react-toastify";
 
@@ -19,8 +20,9 @@ export const asynccurrentstudent = () => async(dispatch,getstate)=>{
     // console.log(data)
    } catch (error) {
     console.log(error)
-    // toast.error(error.response.data.message)
-    // dispatch(iserror(error.response.data.message));
+    toast.error(error.response.data.message)
+    dispatch(iserror(error.response.data.message));
+  
    }
 } 
 
@@ -30,7 +32,7 @@ export const asyncsignupstudent = (student) => async(dispatch,getstate)=>{
       asynccurrentstudent();
       
     } catch (error) {
-      // toast.error(error.response.data.message)
+      toast.error(error.response.data.message)
        dispatch(iserror(error.response.data.message));
     }
 } 
@@ -41,7 +43,7 @@ export const asyncsigninstudent = (student) => async(dispatch,getstate)=>{
     asynccurrentstudent();
     // console.log(data);
   } catch (error) {
-    // toast.error(error.response.data.message)
+    toast.error(error.response.data.message)
      dispatch(iserror(error.response.data.message))
   }
 } 
@@ -403,3 +405,5 @@ export const asynceditresponsetudent = (id,response) => async(dispatch,getstate)
     //  dispatch(iserror(error.response.data.message))
   }
 } 
+
+

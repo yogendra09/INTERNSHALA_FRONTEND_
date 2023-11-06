@@ -7,6 +7,7 @@ import {
   addemploye,
   addinternships,
   addjobs,
+  appliedstudent,
 } from "../Reducers/employeReducer";
 import { toast } from "react-toastify";
 
@@ -188,3 +189,15 @@ export const asynccreateinternshipemploye =(internship) => async (dispatch, gets
       // dispatch(iserror(error.response.data.message));
     }
   };
+
+
+  export const asyncstudentapplied = () => async(dispatch,getstate)=>{
+    try {
+      const { data } = await axios.post("/employe/student/applied/internship");
+      dispatch(appliedstudent(data.response))
+     console.log(data.response)
+    } catch (error) {
+  
+      //  dispatch(iserror(error.response.data.message))
+    }
+  } 

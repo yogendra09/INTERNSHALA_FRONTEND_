@@ -1,7 +1,7 @@
 "use client"
 import { asyncsignupstudent } from '@/store/Actions/studentActions'
 import { useRouter } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 const page = () => {

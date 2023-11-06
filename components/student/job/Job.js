@@ -20,7 +20,9 @@ const Job = () => {
   const ApplyJobHandler = async(id) => {
     toast.success("you successfully applied for this job role");
    await dispatch(asyncapplyjobs(id));
-    router.push('/student/auth/applied');
+    setTimeout(function(){
+      router.push('/student/auth/applied');
+    },2000)
   };
 
 

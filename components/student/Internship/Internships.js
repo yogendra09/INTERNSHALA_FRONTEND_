@@ -13,9 +13,12 @@ const Internships = () => {
     );
 
     const ApplyInternshipHandler = (id)=>{
+         dispatch(asyncapplyinternships(id)) 
          toast.success("you successfully applied for this internship role")
-         dispatch(asyncapplyinternships(id))
-          router.push('/student/auth/applied');
+        
+          setTimeout(function(){
+            router.push('/student/auth/applied');
+       },2000)
 
         }
     
@@ -76,6 +79,7 @@ const Internships = () => {
                 </button>
               )}
              </div>
+             
             </div>
          
         )
